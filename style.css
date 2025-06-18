@@ -1,0 +1,42 @@
+/* Theme color variables */
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --card-bg: white;
+  --card-shadow: rgba(0, 0, 0, 0.06);
+}
+body.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #f1f1f1;
+  --card-bg: #2c2c2c;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+}
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: 2rem;
+}
+header, footer, nav {
+  text-align: center;
+  margin: 1rem 0;
+}
+.controls button {
+  margin: 0.5rem;
+}
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--card-shadow);
+}
+.card img {
+  width: 100%;
+}
+.text {
+  padding: 1rem;
+}

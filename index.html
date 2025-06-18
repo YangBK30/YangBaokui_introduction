@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的个人主页</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 id="name">你好，我是张三</h1>
+    <p id="intro">陶艺创作者 | 艺术探索者</p>
+  </header>
+  <div class="controls">
+    <button onclick="toggleTheme()">切换主题</button>
+    <button onclick="toggleLanguage()">Switch Language</button>
+  </div>
+  <nav>
+    <a href="#gallery">My Works</a>
+    <a href="#profile">Profile PDF</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <main id="gallery" class="gallery">
+    <div class="card">
+      <img src="images/art1.jpg" alt="作品1" />
+      <div class="text">
+        <h3 data-zh="山水釉陶碗" data-en="Landscape Glaze Bowl">山水釉陶碗</h3>
+        <p data-zh="以山水意境为灵感，融合传统釉彩与现代器型。" data-en="Inspired by natural landscapes, combining traditional glaze and modern form.">以山水意境为灵感，融合传统釉彩与现代器型。</p>
+      </div>
+    </div>
+  </main>
+  <section id="profile" style="text-align:center; margin-top: 3rem;">
+    <h2>Download My Artist Profile</h2>
+    <a href="pdfs/profile_en.pdf" target="_blank">View PDF</a>
+  </section>
+  <footer id="contact">
+    <p id="contact">联系我：zhangsan@example.com | 版权所有 © 2025 张三</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
