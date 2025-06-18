@@ -4,38 +4,197 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>我的个人主页</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Theme color variables */
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --card-bg: white;
+      --card-shadow: rgba(0, 0, 0, 0.06);
+    }
+
+    /* Dark mode override */
+    body.dark {
+      --bg-color: #1e1e1e;
+      --text-color: #f1f1f1;
+      --card-bg: #2c2c2c;
+      --card-shadow: rgba(0, 0, 0, 0.3);
+    }
+
+    /* Reset basic styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      padding: 2rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Header section */
+    header {
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--text-color);
+    }
+
+    /* Control buttons container */
+    .controls {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Button styles */
+    .controls button {
+      background: none;
+      border: 1px solid var(--text-color);
+      color: var(--text-color);
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background: var(--text-color);
+      color: var(--bg-color);
+    }
+
+    /* Gallery layout using grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    /* Individual card container */
+    .card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px var(--card-shadow);
+      overflow: hidden;
+      transition: transform 0.2s ease, background 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+      height: auto;
+    }
+
+    /* Text content inside card */
+    .card .text {
+      padding: 1rem;
+    }
+
+    .card .text h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
+  <!-- Header with name and intro -->
   <header>
     <h1 id="name">你好，我是张三</h1>
     <p id="intro">陶艺创作者 | 艺术探索者</p>
   </header>
+
+  <!-- Theme and language toggle buttons -->
   <div class="controls">
     <button onclick="toggleTheme()">切换主题</button>
     <button onclick="toggleLanguage()">Switch Language</button>
   </div>
-  <nav>
-    <a href="#gallery">My Works</a>
-    <a href="#profile">Profile PDF</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <main id="gallery" class="gallery">
+
+  <!-- Gallery of artworks -->
+  <main class="gallery">
     <div class="card">
-      <img src="images/art1.jpg" alt="作品1" />
+      <img src="images/art1.jpg" alt="作品1">
       <div class="text">
         <h3 data-zh="山水釉陶碗" data-en="Landscape Glaze Bowl">山水釉陶碗</h3>
         <p data-zh="以山水意境为灵感，融合传统釉彩与现代器型。" data-en="Inspired by natural landscapes, combining traditional glaze and modern form.">以山水意境为灵感，融合传统釉彩与现代器型。</p>
       </div>
     </div>
+    <div class="card">
+      <img src="images/art2.jpg" alt="作品2">
+      <div class="text">
+        <h3 data-zh="极简白瓷杯" data-en="Minimalist White Cup">极简白瓷杯</h3>
+        <p data-zh="纯净线条与柔光质地的结合，追求极简之美。" data-en="Clean lines and soft gloss pursue minimalist beauty.">纯净线条与柔光质地的结合，追求极简之美。</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/art3.jpg" alt="作品3">
+      <div class="text">
+        <h3 data-zh="裂纹釉盘" data-en="Crackle Glaze Plate">裂纹釉盘</h3>
+        <p data-zh="特殊高温裂纹釉面，展现自然与偶然之美。" data-en="Special high-temp glaze with crackle patterns reflects nature and spontaneity.">特殊高温裂纹釉面，展现自然与偶然之美。</p>
+      </div>
+    </div>
   </main>
-  <section id="profile" style="text-align:center; margin-top: 3rem;">
-    <h2>Download My Artist Profile</h2>
-    <a href="pdfs/profile_en.pdf" target="_blank">View PDF</a>
-  </section>
-  <footer id="contact">
+
+  <!-- Footer -->
+  <footer>
     <p id="contact">联系我：zhangsan@example.com | 版权所有 © 2025 张三</p>
   </footer>
-  <script src="script.js"></script>
+
+  <!-- JavaScript for theme and language switching -->
+  <script>
+    let dark = false;
+    let lang = 'zh';
+
+    // Toggle between dark and light theme
+    function toggleTheme() {
+      dark = !dark;
+      document.body.classList.toggle('dark', dark);
+    }
+
+    // Toggle between Chinese and English content
+    function toggleLanguage() {
+      lang = lang === 'zh' ? 'en' : 'zh';
+
+      // Update header and footer text
+      document.getElementById('name').innerText = lang === 'zh' ? '你好，我是张三' : "Hello, I'm Zhang San";
+      document.getElementById('intro').innerText = lang === 'zh'
+        ? '陶艺创作者 | 艺术探索者'
+        : 'Ceramic Artist | Artistic Explorer';
+      document.getElementById('contact').innerText = lang === 'zh'
+        ? '联系我：zhangsan@example.com | 版权所有 © 2025 张三'
+        : 'Contact: zhangsan@example.com | © 2025 Zhang San';
+
+      // Update all elements with data-zh/data-en attributes
+      document.querySelectorAll('[data-zh]').forEach(el => {
+        el.innerText = el.getAttribute(`data-${lang}`);
+      });
+    }
+  </script>
 </body>
 </html>
