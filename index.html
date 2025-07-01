@@ -126,7 +126,7 @@
 <body>
   <!-- Header with name and intro -->
   <header>
-    <h1 id="name">你好，我是张三</h1>
+    <h1 id="name">你好，我是杨宝奎</h1>
     <p id="intro">陶艺创作者 | 艺术探索者</p>
   </header>
 
@@ -139,31 +139,31 @@
   <!-- Gallery of artworks -->
   <main class="gallery">
     <div class="card">
-      <img src="images/art1.jpg" alt="作品1">
+      <img src="images/HVG.jpg" alt="作品1">
       <div class="text">
-        <h3 data-zh="山水釉陶碗" data-en="Landscape Glaze Bowl">山水釉陶碗</h3>
-        <p data-zh="以山水意境为灵感，融合传统釉彩与现代器型。" data-en="Inspired by natural landscapes, combining traditional glaze and modern form.">以山水意境为灵感，融合传统釉彩与现代器型。</p>
+        <h3 data-zh="健康素食指南" data-en="Healthy Vegetarian Guide">健康素食指南</h3>
+        <p data-zh="既然不想吃肉，就来好好学习怎么健康吃素吧~" data-en="Not into meat? Then let’s master healthy vegetarian eating!">既然不想吃肉，就来好好学习怎么健康吃素吧~</p>
       </div>
     </div>
     <div class="card">
-      <img src="images/art2.jpg" alt="作品2">
+      <img src="images/AI_in_D.jpg" alt="作品2">
       <div class="text">
-        <h3 data-zh="极简白瓷杯" data-en="Minimalist White Cup">极简白瓷杯</h3>
-        <p data-zh="纯净线条与柔光质地的结合，追求极简之美。" data-en="Clean lines and soft gloss pursue minimalist beauty.">纯净线条与柔光质地的结合，追求极简之美。</p>
+        <h3 data-zh="AI+DevOps" data-en="AI+DevOps">极简白瓷杯</h3>
+        <p data-zh="利用AI提升你的DevOps开发效率" data-en="Get your DevOps tasks done faster with AI help.">纯净线条与柔光质地的结合，追求极简之美。</p>
       </div>
     </div>
     <div class="card">
-      <img src="images/art3.jpg" alt="作品3">
+      <img src="images/ANTC.jpg" alt="作品3">
       <div class="text">
-        <h3 data-zh="裂纹釉盘" data-en="Crackle Glaze Plate">裂纹釉盘</h3>
-        <p data-zh="特殊高温裂纹釉面，展现自然与偶然之美。" data-en="Special high-temp glaze with crackle patterns reflects nature and spontaneity.">特殊高温裂纹釉面，展现自然与偶然之美。</p>
+        <h3 data-zh="网页流量特征分析" data-en="Analysis of Network Traffic Characteristics">裂纹釉盘</h3>
+        <p data-zh="探究你的网页上的访问流量有哪些特征" data-en="Let's take a look at the traffic to your website.">特殊高温裂纹釉面，展现自然与偶然之美。</p>
       </div>
     </div>
   </main>
 
   <!-- Footer -->
   <footer>
-    <p id="contact">联系我：zhangsan@example.com | 版权所有 © 2025 张三</p>
+    <p id="contact">联系我：yangfei2466@gmail.com | BaokuiYang@outlook.com | 版权所有 © 2025 杨宝奎</p>
   </footer>
 
   <!-- JavaScript for theme and language switching -->
@@ -182,13 +182,13 @@
       lang = lang === 'zh' ? 'en' : 'zh';
 
       // Update header and footer text
-      document.getElementById('name').innerText = lang === 'zh' ? '你好，我是张三' : "Hello, I'm Zhang San";
+      document.getElementById('name').innerText = lang === 'zh' ? '你好，我是杨宝奎' : "Hello, I'm Yang Baokui";
       document.getElementById('intro').innerText = lang === 'zh'
-        ? '陶艺创作者 | 艺术探索者'
-        : 'Ceramic Artist | Artistic Explorer';
+        ? '软件工程师 | 数字化转型工程师'
+        : 'Software Engineer | Digital Transformation Engineer';
       document.getElementById('contact').innerText = lang === 'zh'
-        ? '联系我：zhangsan@example.com | 版权所有 © 2025 张三'
-        : 'Contact: zhangsan@example.com | © 2025 Zhang San';
+        ? '联系我：yangfei2466@gmail.com | BaokuiYang@outlook.com | 版权所有 © 2025 杨宝奎'
+        : 'Contact: yangfei2466@gmail.com | BaokuiYang@outlook.com | © 2025 Yang Baokui. All rights reserved.';
 
       // Update all elements with data-zh/data-en attributes
       document.querySelectorAll('[data-zh]').forEach(el => {
